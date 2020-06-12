@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("MMM", ": channel=" + Utils.getChannelName(this));
         val channel = WalleChannelReader.getChannel(this.applicationContext)
         Log.e("MMM", ":walle= $channel");
-            //获取渠道方法二
+            //获取渠道方法二 ji
         val channelInfo =
             WalleChannelReader.getChannelInfo(this.applicationContext)
         if (channelInfo != null) {
