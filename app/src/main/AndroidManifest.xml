@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <meta-data
-            android:name="ATMAN_CHANNEL"
-            android:value="${ATMAN_CHANNEL_VALUE}" />
+<!--        <meta-data-->
+<!--            android:name="ATMAN_CHANNEL"-->
+<!--            android:value="${ATMAN_CHANNEL_VALUE}" />-->
 
         <activity android:name=".MainActivity">
             <intent-filter>

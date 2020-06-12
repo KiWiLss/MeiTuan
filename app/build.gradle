@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-//apply plugin: 'walle'
+apply plugin: 'walle'
 android {
     signingConfigs {
         release {
@@ -22,7 +22,7 @@ android {
         versionCode 1
         versionName "1.0"
         //必须要保证所有的flavor 都属于同一个维度
-        flavorDimensions "default"
+        //flavorDimensions "default"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -34,23 +34,23 @@ android {
         }
     }
     //指定渠道
-    productFlavors {
-        vivo {}
-        oppo {}
-        huawei {}
-        xiaomi {}
-        wandoujia {}
-        yingyongbao {}
-        qh360 {}
-        baidu {}
-    }
+//    productFlavors {
+//        vivo {}
+//        oppo {}
+//        huawei {}
+//        xiaomi {}
+//        wandoujia {}
+//        yingyongbao {}
+//        qh360 {}
+//        baidu {}
+//    }
 //    通过脚本获取所有渠道
 //    在Terminal控制台输入gradlew assembleRelease开始打包
 //    包生成在build-->outputs-->apk文件夹
-    productFlavors.all {
-            //遍历替换所有渠道
-        flavor -> flavor.manifestPlaceholders = [ATMAN_CHANNEL_VALUE: name]
-    }
+//    productFlavors.all {
+//            //遍历替换所有渠道
+//        flavor -> flavor.manifestPlaceholders = [ATMAN_CHANNEL_VALUE: name]
+//    }
 
     //自定义打包时apk名字
 //    android.applicationVariants.all { variant ->
@@ -76,15 +76,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 
-    //implementation 'com.meituan.android.walle:library:1.1.6'
+    implementation 'com.meituan.android.walle:library:1.1.6'
 
 
 }
-//walle {
-//    // 指定渠道包的输出路径
-//    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
-//    // 定制渠道包的APK的文件名称
-//    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
-//    // 渠道配置文件
-//    channelFile = new File("${project.getProjectDir()}/channel")
-//}
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+    // 渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channel")
+}

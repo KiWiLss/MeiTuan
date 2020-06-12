@@ -37,6 +37,11 @@ public class Utils {
         return channelName;
     }
 
-
+//    public static String getChannelName(Context context){
+//        if(context == null){
+//            return "";
+//        }
+//        return WalleChannelReader.getChannel(context,"");
+//    }
 
 }
